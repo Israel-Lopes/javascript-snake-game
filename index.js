@@ -11,71 +11,71 @@ window.onload = function () {
   const vel = 1;
 
   /**
-   * vx = velocidadeX
-   * vy = velocidadeY
-   * px = pixelX
-   * py = pixelY
-   * lp = largura pixel
-   * qp = quantidade
-   * ax = appleX
-   * ay = appleY
+   * velocityX = velocidadeX
+   * velocityY = velocidadeY
+   * pixelX = pixelX
+   * pixelY = pixelY
+   * sizePixel = tamanho pixel
+   * amount = quantidade
+   * appleX = appleX
+   * appleY = appleY
    */
-  var vx = vy = 0;
-  var px = 10;
-  var py = 15;
-  var tp = 20;
-  var qp = 20;
-  var ax = ay = 15;
+  var velocityX = velocityY = 0;
+  var pixelX = 10;
+  var pixelY = 15;
+  var sizePixel = 20;
+  var amount = 20;
+  var appleX = appleY = 15;
 
   //trail rastro
   var trail = [];
   var  tail = 5;
 
   function game () {
-    px += vx;
-    py += vy;
+    pixelX += velocityX;
+    pixelY += velocityY;
 
-    if (px < 0) {
-      px = qp -1;
+    if (pixelX < 0) {
+      pixelX = amount -1;
     }
-    if (px > qp -1) {
-      px = 0;
+    if (pixelX > amount -1) {
+      pixelX = 0;
     }
-    if (py < 0) {
-      py = qp -1;
+    if (pixelY < 0) {
+      pixelY = amount -1;
     }
-    if (py > qp-1) {
-      py = 0;
+    if (pixelY > amount-1) {
+      pixelY = 0;
     }
 
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'blue';
     ctx.fillRect(0,0, stage.width, stage.height);
 
-    ctx.fillStyle = 'red';
-    ctx.fillRect(ax*tp, ay*tp, tp,tp);
+    ctx.fillStyle = 'grappleY';
+    ctx.fillRect(appleX*sizePixel, appleY*sizePixel, sizePixel,sizePixel);
 
-    ctx.fillStyle = 'gray';
+    ctx.fillStyle = 'grappleY';
 
     for (var i = 0; i < trail.length; i++) {
-      ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp ,tp);
+      ctx.fillRect(trail[i].x*sizePixel, trail[i].y*sizePixel, sizePixel ,sizePixel);
 
-      if (trail[i].x == px && trail[i].y == py) 
+      if (trail[i].x == pixelX && trail[i].y == pixelY) 
       {
-        vx = vy = 0;
+        velocityX = velocityY = 0;
         tail = 5;
       }
 
     }
 
-    trail.push({x: px, y:py})
+    trail.push({x: pixelX, y:pixelY})
     while (trail.length > tail) {
       trail.shift();
     }
 
-    if (ax == px && ay == py) {
+    if (appleX == pixelX && appleY == pixelY) {
       tail++;
-      ax = Math.floor(Math.random()*qp);
-      ay = Math.floor(Math.random()*qp);
+      appleX = Math.floor(Math.random()*amount);
+      appleY = Math.floor(Math.random()*amount);
     }
 
   }
@@ -83,20 +83,20 @@ window.onload = function () {
   function keyPush (event) {
      switch (event.keyCode) {
        case 37: //left
-        vx = -vel;
-        vy = 0;
+        velocityX = -vel;
+        velocityY = 0;
         break;
       case 38: // up
-        vx = 0;
-        vy = -vel;
+        velocityX = 0;
+        velocityY = -vel;
         break;
       case 39: //right
-        vx = vel;
-        vy = 0;
+        velocityX = vel;
+        velocityY = 0;
         break;
       case 40: //down
-        vx = 0;
-        vy = vel;
+        velocityX = 0;
+        velocityY = vel;
         break;
 
       default:
