@@ -1,0 +1,20 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "snake game",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Israel-Lopes/snake-game.git"
+  },
+  "author": "israel.lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Israel-Lopes/snake-game/issues"
+  },
+  "homepage": "https://github.com/Israel-Lopes/snake-game#readme"
+}
