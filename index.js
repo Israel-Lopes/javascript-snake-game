@@ -51,10 +51,10 @@ window.onload = function () {
     ctx.fillStyle = 'blue';
     ctx.fillRect(0,0, stage.width, stage.height);
 
-    ctx.fillStyle = 'grappleY';
+    ctx.fillStyle = 'gray';
     ctx.fillRect(appleX*sizePixel, appleY*sizePixel, sizePixel,sizePixel);
 
-    ctx.fillStyle = 'grappleY';
+    ctx.fillStyle = 'gray';
 
     for (var i = 0; i < trail.length; i++) {
       ctx.fillRect(trail[i].x*sizePixel, trail[i].y*sizePixel, sizePixel ,sizePixel);
