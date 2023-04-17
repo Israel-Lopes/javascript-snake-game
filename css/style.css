@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/snake_background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #stage {
+    background-color: black;
+    margin: 0 auto;
+  }
+
+  /* Adicione o código abaixo para garantir que o jogo fique centralizado em dispositivos móveis */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
