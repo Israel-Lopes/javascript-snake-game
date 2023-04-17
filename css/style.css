@@ -19,7 +19,6 @@ body {
     margin: 0 auto;
   }
 
-  /* Adicione o código abaixo para garantir que o jogo fique centralizado em dispositivos móveis */
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
